@@ -64,8 +64,12 @@ export default function InterviewPage({ params }: { params: { company: string } 
     const controller = new AbortController()
     setAbortController(controller)
 
+    // Detect mobile for fallback to non-streaming
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
+    const apiEndpoint = isMobile ? '/api/chat-simple' : '/api/chat'
+
     try {
-      const response = await fetch('/api/chat', {
+      const response = await fetch(apiEndpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -80,45 +84,56 @@ export default function InterviewPage({ params }: { params: { company: string } 
         throw new Error('Failed to get response')
       }
 
-      // Handle streaming response
-      const reader = response.body?.getReader()
-      const decoder = new TextDecoder()
-      let accumulatedText = ''
+      if (isMobile) {
+        // Handle simple JSON response for mobile
+        const data = await response.json()
+        const assistantMessage: Message = {
+          role: 'assistant',
+          content: data.response,
+          timestamp: new Date()
+        }
+        setMessages(prev => [...prev, assistantMessage])
+      } else {
+        // Handle streaming response for desktop
+        const reader = response.body?.getReader()
+        const decoder = new TextDecoder()
+        let accumulatedText = ''
 
-      // Create placeholder message
-      const assistantMessage: Message = {
-        role: 'assistant',
-        content: '',
-        timestamp: new Date()
-      }
-      setMessages(prev => [...prev, assistantMessage])
+        // Create placeholder message
+        const assistantMessage: Message = {
+          role: 'assistant',
+          content: '',
+          timestamp: new Date()
+        }
+        setMessages(prev => [...prev, assistantMessage])
 
-      if (reader) {
-        while (true) {
-          const { done, value } = await reader.read()
-          if (done) break
+        if (reader) {
+          while (true) {
+            const { done, value } = await reader.read()
+            if (done) break
 
-          const chunk = decoder.decode(value)
-          const lines = chunk.split('\n')
+            const chunk = decoder.decode(value)
+            const lines = chunk.split('\n')
 
-          for (const line of lines) {
-            if (line.startsWith('data: ')) {
-              const data = line.slice(6)
-              if (data === '[DONE]') break
+            for (const line of lines) {
+              if (line.startsWith('data: ')) {
+                const data = line.slice(6)
+                if (data === '[DONE]') break
 
-              try {
-                const parsed = JSON.parse(data)
-                if (parsed.text) {
-                  accumulatedText += parsed.text
-                  // Update the last message with accumulated text
-                  setMessages(prev => {
-                    const updated = [...prev]
-                    updated[updated.length - 1].content = accumulatedText
-                    return updated
-                  })
+                try {
+                  const parsed = JSON.parse(data)
+                  if (parsed.text) {
+                    accumulatedText += parsed.text
+                    // Update the last message with accumulated text
+                    setMessages(prev => {
+                      const updated = [...prev]
+                      updated[updated.length - 1].content = accumulatedText
+                      return updated
+                    })
+                  }
+                } catch (e) {
+                  // Skip invalid JSON
                 }
-              } catch (e) {
-                // Skip invalid JSON
               }
             }
           }
