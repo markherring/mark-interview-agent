@@ -117,11 +117,11 @@ export async function POST(request: Request) {
       max_tokens: 4096,
       system: [
         {
-          type: 'text' as const,
+          type: 'text',
           text: contextData.systemPrompt,
-          cache_control: { type: 'ephemeral' as const }
+          cache_control: { type: 'ephemeral' }
         }
-      ],
+      ] as any, // Type assertion for prompt caching support
       messages: messages
     })
 

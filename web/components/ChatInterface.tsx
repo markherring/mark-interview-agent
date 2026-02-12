@@ -10,11 +10,12 @@ interface Message {
 interface ChatInterfaceProps {
   messages: Message[]
   onAskQuestion: (question: string) => void
+  onStopGenerating?: () => void
   isLoading: boolean
   disabled: boolean
 }
 
-export function ChatInterface({ messages, onAskQuestion, isLoading, disabled }: ChatInterfaceProps) {
+export function ChatInterface({ messages, onAskQuestion, onStopGenerating, isLoading, disabled }: ChatInterfaceProps) {
   const [input, setInput] = useState('')
   const messagesEndRef = useRef<HTMLDivElement>(null)
 
@@ -96,13 +97,26 @@ export function ChatInterface({ messages, onAskQuestion, isLoading, disabled }: 
             disabled={disabled || isLoading}
             className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-mark-blue focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed"
           />
-          <button
-            type="submit"
-            disabled={!input.trim() || disabled || isLoading}
-            className="px-5 py-2 bg-mark-blue text-white rounded-lg font-medium hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors"
-          >
-            {isLoading ? 'Thinking...' : 'Ask'}
-          </button>
+          {isLoading ? (
+            <button
+              type="button"
+              onClick={onStopGenerating}
+              className="flex items-center gap-2 px-5 py-2 bg-red-600 text-white rounded-lg font-medium hover:bg-red-700 transition-colors"
+            >
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <rect x="6" y="6" width="8" height="8" />
+              </svg>
+              Stop
+            </button>
+          ) : (
+            <button
+              type="submit"
+              disabled={!input.trim() || disabled}
+              className="px-5 py-2 bg-mark-blue text-white rounded-lg font-medium hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors"
+            >
+              Ask
+            </button>
+          )}
         </div>
       </form>
     </div>

@@ -19,6 +19,7 @@ export default function InterviewPage({ params }: { params: { company: string } 
   const [questionCount, setQuestionCount] = useState(0)
   const [isLoading, setIsLoading] = useState(false)
   const [suggestedQuestions, setSuggestedQuestions] = useState<Record<string, string[]>>({})
+  const [abortController, setAbortController] = useState<AbortController | null>(null)
   const maxQuestions = 50
 
   const companyName = decodeURIComponent(params.company)
@@ -59,6 +60,10 @@ export default function InterviewPage({ params }: { params: { company: string } 
     setQuestionCount(prev => prev + 1)
     setIsLoading(true)
 
+    // Create abort controller for this request
+    const controller = new AbortController()
+    setAbortController(controller)
+
     try {
       const response = await fetch('/api/chat', {
         method: 'POST',
@@ -67,22 +72,58 @@ export default function InterviewPage({ params }: { params: { company: string } 
           question,
           company: companyName,
           history: messages
-        })
+        }),
+        signal: controller.signal
       })
 
       if (!response.ok) {
         throw new Error('Failed to get response')
       }
 
-      const data = await response.json()
+      // Handle streaming response
+      const reader = response.body?.getReader()
+      const decoder = new TextDecoder()
+      let accumulatedText = ''
 
+      // Create placeholder message
       const assistantMessage: Message = {
         role: 'assistant',
-        content: data.response,
+        content: '',
         timestamp: new Date()
       }
-
       setMessages(prev => [...prev, assistantMessage])
+
+      if (reader) {
+        while (true) {
+          const { done, value } = await reader.read()
+          if (done) break
+
+          const chunk = decoder.decode(value)
+          const lines = chunk.split('\n')
+
+          for (const line of lines) {
+            if (line.startsWith('data: ')) {
+              const data = line.slice(6)
+              if (data === '[DONE]') break
+
+              try {
+                const parsed = JSON.parse(data)
+                if (parsed.text) {
+                  accumulatedText += parsed.text
+                  // Update the last message with accumulated text
+                  setMessages(prev => {
+                    const updated = [...prev]
+                    updated[updated.length - 1].content = accumulatedText
+                    return updated
+                  })
+                }
+              } catch (e) {
+                // Skip invalid JSON
+              }
+            }
+          }
+        }
+      }
 
       // Track usage
       await fetch('/api/track', {
@@ -93,10 +134,23 @@ export default function InterviewPage({ params }: { params: { company: string } 
           question
         })
       })
-    } catch (error) {
-      console.error('Error:', error)
-      alert('Failed to get response. Please try again.')
+    } catch (error: any) {
+      if (error.name === 'AbortError') {
+        console.log('Request aborted by user')
+      } else {
+        console.error('Error:', error)
+        alert('Failed to get response. Please try again.')
+      }
     } finally {
+      setIsLoading(false)
+      setAbortController(null)
+    }
+  }
+
+  const handleStopGenerating = () => {
+    if (abortController) {
+      abortController.abort()
+      setAbortController(null)
       setIsLoading(false)
     }
   }
@@ -123,7 +177,7 @@ export default function InterviewPage({ params }: { params: { company: string } 
                 <h2 className="text-xl font-semibold text-gray-800">
                   Interview Conversation
                 </h2>
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-3">
                   <span className="text-sm text-gray-500">
                     {questionCount} / {maxQuestions} questions
                   </span>
@@ -134,6 +188,7 @@ export default function InterviewPage({ params }: { params: { company: string } 
               <ChatInterface
                 messages={messages}
                 onAskQuestion={handleAskQuestion}
+                onStopGenerating={handleStopGenerating}
                 isLoading={isLoading}
                 disabled={questionCount >= maxQuestions}
               />
