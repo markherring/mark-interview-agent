@@ -79,7 +79,7 @@ Low-code platform for AI agent development with two paradigms:
 | **Prasanna Arikala** | CTO & Head of Product | |
 | **Uma Sandilya** | Chief Growth Officer | Former C3.AI (~10 yrs, took public). McKinsey background. Key stakeholder / gatekeeper. |
 | **Lynda Smith** | Sr Marketing Advisor | Former multi-time CMO. Hands-on gap-filler. Wants a true CMO to take over. |
-| **Bill Macaitis** | Advisor | Former CMO at Slack and Zendesk. Ongoing advisor. Wants to partner with new CMO. |
+| **Bill Macaitis** | Advisor | Former CMO at Slack and Zendesk. Ongoing advisor. Wants to partner with new CMO. | 
 | **Trang Watson** | Chief of Staff | we worked together at HiveMQ where she was Chief of Staff. She referred me to the company |
 
 ---
@@ -101,7 +101,7 @@ Low-code platform for AI agent development with two paradigms:
 5. **ABM Muscle** — Currently opportunistic. Need disciplined, hyper-targeted ABM motion for P1–P4 accounts.
 
 ### What They Need in a CMO
-- Scrappy operator, not budget-dependent (~$6M program budget)
+- Scrappy operator who can work with lean budgets (~$6M program budget is below industry benchmark for $100M+ ARR, but Mark has operated effectively in this range)
 - Messaging discipline and clarity-first approach
 - Customer-centric, trust-based marketing (not flashy enterprise event spam)
 - Comfortable fixing adjacent problems (BDR, enablement, execution)
@@ -122,7 +122,7 @@ Low-code platform for AI agent development with two paradigms:
 - **Agentic AI is the next platform shift** — Kore.ai is positioned at the center of where enterprise AI is heading. The category is forming right now and this company has the product, the customers, and the analyst validation to win it.
 - **The marketing problem is solvable and familiar** — Messaging discipline, pipeline conversion, ABM, leveraging analyst credibility, translating a complex platform into clear vertical GTM. This is exactly what Mark has done at InfluxData, Teleport, HiveMQ, and Pachyderm.
 - **Under-leveraged analyst recognition** — Gartner MQ Leader three times, Forrester Wave Leader multiple times, and none of it is visible in the market. That's a massive unlock waiting to happen.
-- **Scrappy, execution-focused environment** — $6M budget means creativity and focus, not politics and bloat. Aligns with how Mark operates.
+- **Scrappy, execution-focused environment** — Mark knows how to make lean budgets work through precision: ABM over spray-and-pray, analyst leverage over event bloat, customer marketing over flashy campaigns.
 - **Strong advisory bench** — Bill Macaitis (Slack, Zendesk CMO) wants to partner. Lynda Smith has been holding things together and wants a real CMO to take over. The support structure is there.
 
 ---
@@ -144,27 +144,11 @@ Low-code platform for AI agent development with two paradigms:
 - "I've spent my career taking complex, deeply technical platforms and turning them into clear positioning and predictable pipeline. That's exactly what Kore.ai needs right now."
 - "Messaging discipline means picking a lane and holding it for a year, not changing the homepage every quarter. I've done this at InfluxData, Teleport, and HiveMQ — define who you are, hold the line, let the market catch up."
 - "Pipeline conversion breakdowns at the MDR/handoff layer are fixable. I've rebuilt SDR/BDR orgs and pipeline handoff processes at Teleport and InfluxData — this is operational, not strategic."
-- "With $6M, you need precision — ABM, content-led plays into P1–P4 accounts, analyst-anchored credibility. Not spray-and-pray event spend. That's how I've always operated."
+- "$6M means precision — ABM into P1-P4 accounts, analyst-led credibility, customer marketing. I know how to make lean budgets work, and I know when they need to scale."
 - "The agentic AI category is forming right now. Kore.ai has the product depth and enterprise proof points to own it — but only if marketing tells that story clearly and consistently."
 
 ---
 
-## Signals & Read
-- **Strong positive signal across all three conversations.** Uma, Bill, and Lynda independently validated same diagnosis and see Mark's profile as strong fit.
-- Bill explicitly wants to partner in the role.
-- Lynda seemed to want to partner.
-- This is the right moment — product/strategy finally stable after years of pivots.
-
----
-
-## Open Questions / Prep
-- Who else is in the interview loop after Lynda? Raj? DK?
-- What does the current marketing org look like (headcount, structure)?
-- What's the CRO relationship / sales org structure?
-- Partner channel: how much revenue is partner-sourced?
-- Timeline to hire? Budget for CMO comp?
-- How do they measure marketing success today (metrics, attribution)?
-- What happened with the previous CMO finalist who dropped out?
 
 
 

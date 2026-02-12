@@ -63,18 +63,3 @@ I'm technically fluent enough to understand what the product does, who it's for,
 - Built SDR teams from 0 → 5 (Teleport), 0 → 12 (InfluxData)
 - Scaled developer communities to 1M+ users
 
----
-
-## What This Means for [Company Name]
-
-**For PLG + Enterprise companies (like Descript):**
-I've built this exact motion at InfluxData (OSS → Cloud → Enterprise) and HiveMQ (Enterprise → Cloud/PLG expansion). I know how to scale both engines without breaking what's working.
-
-**For technical infrastructure companies (like Kore.ai, Teleport):**
-I understand how to market to technical buyers (developers, SREs, data engineers) while also building messaging for economic buyers. I've done this across databases, IoT, security, and developer tools.
-
-**For companies with strong product but weak GTM (like early InfluxData, Teleport):**
-This is my sweet spot. I know how to diagnose what's broken (usually ICP clarity, loose MQL definitions, weak pipeline orchestration) and rebuild it systematically.
-
-**For companies needing to scale from $10M → $50M+ ARR:**
-I've done this twice (InfluxData, HiveMQ) and know the inflection points: when to hire demand gen, when to build SDR, when to tighten MQL criteria, when to invest in ops and attribution.

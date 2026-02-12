@@ -92,21 +92,3 @@ At one company, the CMO said "community and open source are our primary demand d
 
 **Compounding effects are leverage.** Small improvements at multiple stages compound. Going from 7.5% to 10% website conversion, 7.8% to 15% inquiry-to-MQL, and 6.8% to 27% MQL-to-SQL doesn't just add up - it multiplies. That's a 7.6× improvement in SQL output from the same inquiry volume.
 
----
-
-## Company-Specific Examples
-
-**For PLG + Enterprise hybrid companies (like Descript):**
-Add: PLG-to-Enterprise conversion rate, PQL definition clarity, cloud user activation rates, systematic handoff process from product to sales. The diagnostic question: "Is PLG a lead source, a qualification filter, or a stand-alone growth engine?"
-
-**For companies with strong community/OSS (like InfluxDB, HiveMQ):**
-Add: GitHub activity trends, community user activation, OSS-to-commercial conversion, dark funnel signal measurement. The diagnostic question: "Are we measuring our biggest demand driver?"
-
-**For companies with declining organic traffic:**
-Deep dive on content strategy, SEO authority, keyword rankings, backlink profile, technical SEO issues. Also look at: is paid spend increasing to compensate? That's a red flag.
-
-**For companies with long sales cycles (100+ days):**
-Look at: Are AEs spending time qualifying (should be SDR work)? Do we have tools for economic buyers (ROI calculators, value frameworks)? Are we multi-threading (champion + economic buyer)?
-
-**For technical infrastructure companies (like Teleport, Kore.ai):**
-The champion-to-economic-buyer gap is common. Technical buyers love the product but don't control budget. Diagnostic includes: Do we have messaging for economic buyers? Do we have ROI/value tools? What's our win rate when we engage budget authority early vs late?

@@ -30,13 +30,3 @@ Before hiring anyone, the first 90 days is getting alignment on positioning and 
 - Pipeline orchestration and revenue connection (I'm in the weekly pipeline reviews)
 - Technical translation and GTM strategy
 
-## Key Points for Specific Companies
-
-**For companies with limited budgets (~$6M like Kore.ai):**
-You have to be surgical. I'd rather have 3-4 people who are excellent at their core function than 8 people spread thin. Demand gen, content, and product marketing can be built in-house because that's where your competitive advantage lives. Everything else can be agencies or fractional until you prove the model works.
-
-**For PLG + enterprise hybrid companies (like Descript or InfluxData):**
-Demand gen becomes even more critical because you need someone who understands both the PLG funnel (PQLs, product-led conversion) and the enterprise motion (ABM, outbound into target accounts). It's a specific skillset - I've built this at InfluxData and HiveMQ.
-
-**For deeply technical products (like Kore.ai, Teleport, InfluxData):**
-The content orchestration hire is critical. You need someone who can get engineers and technical experts to create authentic content, not generic fluff. Technical buyers can smell fake expertise from a mile away.

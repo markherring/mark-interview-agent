@@ -134,6 +134,16 @@ class InterviewAgent:
         self.context = self.load_context(company_name)
         self.system_prompt = self.build_system_prompt(self.context)
 
+        # Add coaching message with response constraints
+        self.conversation_history.append({
+            "role": "user",
+            "content": "CRITICAL INSTRUCTIONS: Keep ALL responses 250-400 words max. Each bullet point = 2-3 sentences only (not paragraphs). NEVER add 'What Excites Me About [Company]' or 'For [Company] specifically' sections at the end - just answer the question and stop. Never mention '30+ years'. Follow these rules strictly."
+        })
+        self.conversation_history.append({
+            "role": "assistant",
+            "content": "Got it. Tight answers with 2-3 sentence bullets. I'll answer the question directly without adding company-specific sections at the end."
+        })
+
     def send_message(self, user_message: str, stream: bool = False) -> str:
         """
         Send a message to the agent and get a response
@@ -158,7 +168,7 @@ class InterviewAgent:
             # Call Claude API
             response = self.client.messages.create(
                 model="claude-sonnet-4-20250514",  # Latest Sonnet model
-                max_tokens=2000,
+                max_tokens=1200,
                 system=self.system_prompt,
                 messages=self.conversation_history
             )

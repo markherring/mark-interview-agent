@@ -1,69 +1,95 @@
 import { NextResponse } from 'next/server'
 import Anthropic from '@anthropic-ai/sdk'
-import { readFileSync } from 'fs'
+import { readFileSync, readdirSync } from 'fs'
 import { join } from 'path'
 
 const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY,
 })
 
-function loadContext(company: string) {
-  const contextPath = join(process.cwd(), '..', 'companies', `${company.toLowerCase().replace(/[\s.]+/g, '_')}.md`)
-  const systemPromptPath = join(process.cwd(), '..', 'agent', 'system_prompt.md')
-
-  console.log('Attempting to load:')
-  console.log('  Context path:', contextPath)
-  console.log('  System prompt path:', systemPromptPath)
-
+function loadIdentity(): string {
+  const identityPath = join(process.cwd(), '..', 'core', 'identity.md')
   try {
-    const contextContent = readFileSync(contextPath, 'utf-8')
-    const systemPrompt = readFileSync(systemPromptPath, 'utf-8')
-
-    console.log('✓ Files loaded successfully')
-
-    return {
-      systemPrompt: systemPrompt.replace('{COMPANY_NAME}', company),
-      context: contextContent
-    }
+    return readFileSync(identityPath, 'utf-8')
   } catch (error) {
-    console.error('✗ Error loading context:', error)
-    return null
+    console.error('Failed to load identity:', error)
+    return '[Identity file not found]'
   }
 }
 
-function loadStandardAnswers() {
+function loadStandardAnswers(): string {
   const standardAnswersDir = join(process.cwd(), '..', 'core', 'standard_answers')
-  const files = [
-    '90-day-plan.md',
-    'career-background.md',
-    'diagnostic-methodology.md',
-    'marketing-org-hiring.md'
-  ]
-
-  let content = '\n\n## STANDARD ANSWERS\n\n'
-
-  files.forEach(file => {
-    try {
-      const filePath = join(standardAnswersDir, file)
-      const fileContent = readFileSync(filePath, 'utf-8')
-      content += `\n### ${file}\n${fileContent}\n`
-    } catch (error) {
-      // File might not exist, skip it
-    }
-  })
-
-  return content
-}
-
-function loadReference() {
-  const referencePath = join(process.cwd(), '..', 'core', 'reference', 'expanded-work-history.md')
 
   try {
-    const content = readFileSync(referencePath, 'utf-8')
-    return `\n\n## EXPANDED WORK HISTORY\n\n${content}\n`
+    const files = readdirSync(standardAnswersDir)
+      .filter(f => f.endsWith('.md') && !f.startsWith('_') && f !== 'README.md')
+      .sort()
+
+    let content = ''
+    files.forEach(file => {
+      try {
+        const filePath = join(standardAnswersDir, file)
+        const fileContent = readFileSync(filePath, 'utf-8')
+        content += `\n${'='.repeat(60)}\n${fileContent}\n${'='.repeat(60)}\n`
+      } catch (error) {
+        // File might not exist, skip it
+      }
+    })
+
+    return content || '[No standard answers found]'
   } catch (error) {
+    console.error('Failed to load standard answers:', error)
+    return '[No standard answers found]'
+  }
+}
+
+function loadCompanyContext(company: string): string {
+  const companyFile = company.toLowerCase().replace(/[\s.]+/g, '_')
+  const contextPath = join(process.cwd(), '..', 'companies', `${companyFile}.md`)
+
+  try {
+    return readFileSync(contextPath, 'utf-8')
+  } catch (error) {
+    console.error('Failed to load company context:', contextPath, error)
     return ''
   }
+}
+
+function loadSystemPromptTemplate(): string {
+  const systemPromptPath = join(process.cwd(), '..', 'agent', 'system_prompt.md')
+
+  try {
+    return readFileSync(systemPromptPath, 'utf-8')
+  } catch (error) {
+    console.error('Failed to load system prompt:', error)
+    return ''
+  }
+}
+
+function buildSystemPrompt(company: string): string | null {
+  const template = loadSystemPromptTemplate()
+  if (!template) return null
+
+  const identity = loadIdentity()
+  const companyContext = loadCompanyContext(company)
+  const standardAnswers = loadStandardAnswers()
+
+  if (!companyContext) return null
+
+  // Format company name: kore_ai -> Kore.Ai
+  const companyDisplayName = company.replace(/_/g, '.').replace(/\b\w/g, c => c.toUpperCase())
+
+  // Replace all placeholders — matching the Python engine behavior
+  let systemPrompt = template
+  systemPrompt = systemPrompt.replace(/{COMPANY_NAME}/g, companyDisplayName)
+  systemPrompt = systemPrompt.replace('{IDENTITY}', identity)
+  systemPrompt = systemPrompt.replace('{COMPANY_CONTEXT}', companyContext)
+  systemPrompt = systemPrompt.replace('{STANDARD_ANSWERS}', standardAnswers)
+  systemPrompt = systemPrompt.replace('{TONE_GUIDANCE}',
+    "Maintain Mark's direct, candid style while showing genuine interest in the company's mission and technical challenges."
+  )
+
+  return systemPrompt
 }
 
 export async function POST(request: Request) {
@@ -74,33 +100,30 @@ export async function POST(request: Request) {
     console.log('Company:', company)
     console.log('Question:', question)
     console.log('API Key exists:', !!process.env.ANTHROPIC_API_KEY)
-    console.log('Working directory:', process.cwd())
 
-    const contextData = loadContext(company)
-    if (!contextData) {
-      console.error('Failed to load context for company:', company)
+    const systemPrompt = buildSystemPrompt(company)
+    if (!systemPrompt) {
+      console.error('Failed to build system prompt for company:', company)
       return NextResponse.json(
         { error: 'Company context not found' },
         { status: 404 }
       )
     }
 
-    console.log('Context loaded successfully')
-
-    const standardAnswers = loadStandardAnswers()
-    const reference = loadReference()
+    console.log('System prompt built successfully')
 
     const messages = [
-      {
-        role: 'user' as const,
-        content: [
-          {
-            type: 'text' as const,
-            text: contextData.context + standardAnswers + reference,
-            cache_control: { type: 'ephemeral' as const }
-          }
-        ]
-      },
+      // Add coaching message if this is the first user message (no history yet)
+      ...(history.length === 0 ? [
+        {
+          role: 'user' as const,
+          content: "CRITICAL INSTRUCTIONS: Keep ALL responses 250-400 words max. Each bullet point = 2-3 sentences only (not paragraphs). NEVER add 'What Excites Me About [Company]' or 'For [Company] specifically' sections at the end - just answer the question and stop. Never mention '30+ years'. Follow these rules strictly."
+        },
+        {
+          role: 'assistant' as const,
+          content: "Got it. Tight answers with 2-3 sentence bullets. I'll answer the question directly without adding company-specific sections at the end."
+        }
+      ] : []),
       ...history.map((msg: any) => ({
         role: msg.role,
         content: msg.content
@@ -114,14 +137,8 @@ export async function POST(request: Request) {
     // Create streaming response
     const stream = await anthropic.messages.stream({
       model: 'claude-sonnet-4-20250514',
-      max_tokens: 4096,
-      system: [
-        {
-          type: 'text',
-          text: contextData.systemPrompt,
-          cache_control: { type: 'ephemeral' }
-        }
-      ] as any, // Type assertion for prompt caching support
+      max_tokens: 1200,
+      system: systemPrompt,
       messages: messages
     })
 

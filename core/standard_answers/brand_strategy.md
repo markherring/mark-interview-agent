@@ -48,12 +48,3 @@ For enterprise software, I'd go to **Gartner Symposium** first. Why? That's wher
 
 Then it's relentless focus around that event and those channels. Whether you like Gartner or not, that's where the buyers are.
 
----
-
-## Key Takeaways for Interviewer
-- I believe in **focus and commitment** over spreading too thin
-- I bring a **structured process** for getting teams aligned on positioning
-- I've done this successfully at **multiple companies** (Hortonworks, InfluxData, Teleport, HiveMQ)
-- I focus on **practical outcomes**: 18-month commitments, consistent execution, measurable results
-- I balance **investor expectations with customer reality**
-- I know where **enterprise buyers actually are** (analyst events, not just hip conferences)

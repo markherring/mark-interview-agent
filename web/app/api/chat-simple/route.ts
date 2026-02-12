@@ -79,6 +79,17 @@ export async function POST(request: Request) {
         role: 'user' as const,
         content: contextData.context + standardAnswers + reference
       },
+      // Add coaching message if this is the first user message (no history yet)
+      ...(history.length === 0 ? [
+        {
+          role: 'user' as const,
+          content: "CRITICAL INSTRUCTIONS: Keep ALL responses 250-400 words max. Each bullet point = 2-3 sentences only (not paragraphs). NEVER add 'What Excites Me About [Company]' or 'For [Company] specifically' sections at the end - just answer the question and stop. Never mention '30+ years'. Follow these rules strictly."
+        },
+        {
+          role: 'assistant' as const,
+          content: "Got it. Tight answers with 2-3 sentence bullets. I'll answer the question directly without adding company-specific sections at the end."
+        }
+      ] : []),
       ...history.map((msg: any) => ({
         role: msg.role,
         content: msg.content
