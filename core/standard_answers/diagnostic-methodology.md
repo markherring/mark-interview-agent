@@ -22,7 +22,7 @@ Three things I look at when diagnosing pipeline or GTM problems:
 - **Week 2:** Benchmark every conversion rate, map 6-quarter trends, synthesize data with stakeholder quotes.
 - **Deliverable:** What's working, what's not, what leadership must decide, 5-7 actionable recommendations.
 
-## Key Benchmarks
+## Key Benchmarks from Iconiq 
 - Website → Inquiry: 10%+
 - Inquiry → MQL: 15%+
 - MQL → SQL: 25-30%

@@ -17,7 +17,7 @@ Brand and awareness all get down to focus. The biggest challenge in most compani
 
 ## Key Principles
 
-- Positioning takes external help and 12 weeks minimum.
+- Positioning ideally needs external help and 12 weeks minimum.
 - The biggest mistake: changing messaging every quarter when it "feels stale." The market hasn't heard it yet.
 - If you have Gartner/Forrester recognition, it should be the first thing on your website.
 - Balance investor expectations (future category) with customer reality (current buying triggers).

@@ -20,6 +20,6 @@ I've been building and scaling GTM engines for technical infrastructure companie
 ## Key Metrics
 
 - Pipeline: HiveMQ $25M→$53M, Teleport $3.1M→$8.4M/quarter, Twingate $232k→$1.8M/quarter
-- PLG: HiveMQ $2.6M→$8.4M, InfluxData $5M PLG ARR
-- ARR: InfluxData $1M→$30M, Forte $20M→$120M
-- Teams: Built marketing orgs from 3 to 30-person teams, SDR teams from zero
+- PLG: HiveMQ Grew 400%, InfluxData grew PLG to be 15% of all revenue
+- ARR: InfluxData $1M→$30M, HiveMQ $10M-$33M, Forte $20M→$120M
+- Teams: Built marketing orgs from 3 to 30-person teams, SDR teams from 0-20
