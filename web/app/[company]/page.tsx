@@ -20,6 +20,7 @@ export default function InterviewPage({ params }: { params: { company: string } 
   const [isLoading, setIsLoading] = useState(false)
   const [suggestedQuestions, setSuggestedQuestions] = useState<Record<string, string[]>>({})
   const [abortController, setAbortController] = useState<AbortController | null>(null)
+  const [streamingIndex, setStreamingIndex] = useState<number | undefined>(undefined)
   const maxQuestions = 50
 
   const companyName = decodeURIComponent(params.company)
@@ -91,7 +92,10 @@ export default function InterviewPage({ params }: { params: { company: string } 
         content: '',
         timestamp: new Date()
       }
-      setMessages(prev => [...prev, assistantMessage])
+      setMessages(prev => {
+        setStreamingIndex(prev.length) // index of the new assistant message
+        return [...prev, assistantMessage]
+      })
 
       if (reader) {
         let pendingUpdate = false
@@ -155,6 +159,7 @@ export default function InterviewPage({ params }: { params: { company: string } 
         alert('Failed to get response. Please try again.')
       }
     } finally {
+      setStreamingIndex(undefined)
       setIsLoading(false)
       setAbortController(null)
     }
@@ -164,6 +169,7 @@ export default function InterviewPage({ params }: { params: { company: string } 
     if (abortController) {
       abortController.abort()
       setAbortController(null)
+      setStreamingIndex(undefined)
       setIsLoading(false)
     }
   }
@@ -204,6 +210,7 @@ export default function InterviewPage({ params }: { params: { company: string } 
                 onStopGenerating={handleStopGenerating}
                 isLoading={isLoading}
                 disabled={questionCount >= maxQuestions}
+                streamingIndex={streamingIndex}
               />
 
               {/* Disclaimer */}

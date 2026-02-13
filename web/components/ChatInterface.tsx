@@ -13,13 +13,19 @@ interface ChatInterfaceProps {
   onStopGenerating?: () => void
   isLoading: boolean
   disabled: boolean
+  streamingIndex?: number // index of the message currently being streamed
 }
 
-export function ChatInterface({ messages, onAskQuestion, onStopGenerating, isLoading, disabled }: ChatInterfaceProps) {
+export function ChatInterface({ messages, onAskQuestion, onStopGenerating, isLoading, disabled, streamingIndex }: ChatInterfaceProps) {
   const [input, setInput] = useState('')
   const messagesEndRef = useRef<HTMLDivElement>(null)
+  const lastScrollRef = useRef(0)
 
   const scrollToBottom = () => {
+    // Throttle scrolling during streaming to avoid overwhelming mobile Safari
+    const now = Date.now()
+    if (now - lastScrollRef.current < 300) return
+    lastScrollRef.current = now
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
   }
 
@@ -60,6 +66,11 @@ export function ChatInterface({ messages, onAskQuestion, onStopGenerating, isLoa
               >
                 {message.role === 'user' ? (
                   <p className="text-sm">{message.content}</p>
+                ) : streamingIndex === index ? (
+                  // Plain text during streaming — ReactMarkdown on every frame crashes mobile Safari
+                  <div className="prose prose-sm max-w-none whitespace-pre-wrap">
+                    {message.content}
+                  </div>
                 ) : (
                   <div className="markdown-body prose prose-sm max-w-none">
                     <ReactMarkdown>{message.content}</ReactMarkdown>
@@ -72,7 +83,7 @@ export function ChatInterface({ messages, onAskQuestion, onStopGenerating, isLoa
             </div>
           ))
         )}
-        {isLoading && (
+        {isLoading && streamingIndex === undefined && (
           <div className="flex justify-start">
             <div className="bg-gray-100 rounded-lg px-4 py-3">
               <div className="flex items-center gap-2">
