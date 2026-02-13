@@ -51,9 +51,7 @@ export function InterviewHeader({ company }: InterviewHeaderProps) {
 
       <div className="mt-5 pt-5 border-t border-gray-200">
         <p className="text-sm text-gray-700 leading-relaxed">
-          <strong>Technically fluent marketing leader</strong> who builds GTM engines for technical infrastructure companies.
-          Proven track record scaling revenue from $1M → $30M ARR (InfluxData), doubling qualified pipeline to $53M (HiveMQ),
-          and building hybrid PLG + enterprise motions. Expert in databases, IoT platforms, developer tools, and security infrastructure.
+          <strong>AI-fluent, technically grounded marketing leader</strong> focused on rebuilding and modernizing go-to-market systems, turning complex developer, data, and infrastructure platforms into scalable, forecastable revenue across PLG and enterprise.
         </p>
       </div>
     </div>
