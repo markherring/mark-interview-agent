@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 
 interface InterviewHeaderProps {
@@ -33,18 +32,11 @@ export function InterviewHeader({ company }: InterviewHeaderProps) {
         {/* Center: Photo */}
         <div className="flex-shrink-0 mx-6">
           <div className="w-24 h-24 relative rounded-full overflow-hidden border-3 border-mark-blue">
-            {/* Placeholder - user will add actual photo */}
-            <div className="w-full h-full bg-gradient-to-br from-mark-blue to-blue-700 flex items-center justify-center text-white text-3xl font-bold">
-              MH
-            </div>
-            {/* When photo is added, uncomment this: */
-            <Image
+            <img
               src="/mark-herring.jpg"
               alt="Mark Herring"
-              fill
-              className="object-cover"
+              className="w-full h-full object-cover"
             />
-            }
           </div>
         </div>
 
@@ -59,7 +51,7 @@ export function InterviewHeader({ company }: InterviewHeaderProps) {
 
       <div className="mt-5 pt-5 border-t border-gray-200">
         <p className="text-sm text-gray-700 leading-relaxed">
-          <strong>Technically fluent marketing leader</strong> with 30+ years building GTM engines for technical infrastructure companies.
+          <strong>Technically fluent marketing leader</strong> who builds GTM engines for technical infrastructure companies.
           Proven track record scaling revenue from $1M → $30M ARR (InfluxData), doubling qualified pipeline to $53M (HiveMQ),
           and building hybrid PLG + enterprise motions. Expert in databases, IoT platforms, developer tools, and security infrastructure.
         </p>
