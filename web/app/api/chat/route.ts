@@ -117,11 +117,11 @@ export async function POST(request: Request) {
       ...(history.length === 0 ? [
         {
           role: 'user' as const,
-          content: "CRITICAL INSTRUCTIONS: Keep ALL responses 250-400 words max. Each bullet point = 2-3 sentences only (not paragraphs). NEVER add 'What Excites Me About [Company]' or 'For [Company] specifically' sections at the end - just answer the question and stop. Never mention '30+ years'. Follow these rules strictly."
+          content: "CRITICAL INSTRUCTIONS: 150-250 words max. Each point = bold label + ONE sentence. Max 2-3 points. No closing/summary paragraph - after the last point, stop. Never mention total years of experience."
         },
         {
           role: 'assistant' as const,
-          content: "Got it. Tight answers with 2-3 sentence bullets. I'll answer the question directly without adding company-specific sections at the end."
+          content: "Got it. Bold label + one sentence per point, no summary at the end, stop after the last point."
         }
       ] : []),
       ...history.map((msg: any) => ({

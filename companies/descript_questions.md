@@ -1,31 +1,37 @@
 # Suggested Interview Questions - Descript
 
-## Experience & Background
-- Walk me through your background
-- What are your biggest accomplishments at HiveMQ?
-- How did you scale InfluxData from $1M to $30M ARR?
-- Tell me about your experience with PLG + enterprise motions
+## Building B2B From Scratch
+- How do you build a B2B marketing engine inside a consumer-DNA company?
+- What does the first repeatable sales playbook look like for Descript?
+- How do you establish marketing as a strategic voice when the company has never had B2B leadership?
+- How do you move beyond hand-raisers and PQLs to build predictable outbound pipeline?
 
-## PLG & Prosumer Marketing
-- How do you approach marketing to creators and prosumers?
-- What is your experience scaling PLG revenue?
-- How do you balance product-led and sales-led growth?
-- Tell me about driving DAU growth and engagement
+## ICP & Segmentation
+- How do you figure out which enterprise buyers actually convert and stick?
+- Why does Apple buy Descript when there are dozens of video editing tools?
+- How do you define ICP when enterprise customers span wildly different use cases?
+- How do you decide which verticals to target first — marketing, L&D, sales enablement?
 
-## GTM Strategy for Descript
-- How would you approach the first 90 days as CMO at Descript?
-- What is your framework for marketing creative tools?
-- How do you expand from prosumer to enterprise?
-- How would you position Descript in the video/audio editing market?
+## PLG + Enterprise Balance
+- How do you scale enterprise without breaking the PLG motion driving $70M ARR?
+- How do you handle the $30/month enterprise user problem — big company, small plan?
+- How do you turn PLG usage signals into enterprise pipeline triggers?
+- What's the right balance when sales is targeting 35% of ARR?
 
-## Content & Community
-- How do you build content marketing for creator tools?
-- What is your approach to community-led growth?
-- How do you turn users into advocates and evangelists?
-- Tell me about influencer and creator marketing strategies
+## Team & Execution
+- What does the marketing team look like in 6 months? Who stays, who's new?
+- How do you hire and move fast when the handbook isn't written yet?
+- How do you partner with a product-first CEO who hasn't had a strategic marketing partner?
+- How do you work with a sales team that just scaled from 1 to 5 AEs?
 
-## Growth & Conversion
-- How do you optimize freemium conversion rates?
-- What metrics matter most for PLG businesses?
-- How do you reduce churn in subscription products?
-- Tell me about your approach to pricing and packaging experiments
+## 90-Day Plan
+- Walk me through your first 90 days as CMO at Descript
+- What would your diagnostic look like in the first 30 days?
+- What are the first experiments you'd run to figure out what channels work?
+- How do you hit concrete pipeline goals when starting from a blank sheet?
+
+## Product & Positioning
+- How do you position "edit video like a document" for enterprise buyers vs creators?
+- How would you leverage the upcoming API launch as an enterprise growth lever?
+- How do you market AI features without sounding like every other AI company?
+- What's the positioning strategy when competitors range from Adobe Premiere to Canva to Riverside?

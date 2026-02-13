@@ -15,9 +15,9 @@
 - **Data and analytics rigor:** BI integration, attribution modeling, pipeline forecasting, funnel instrumentation — treats marketing as a measurable revenue system
 
 ## Professional Background
-Senior B2B marketing executive with 30+ years of experience, including 7+ years as CMO at venture-backed startups (Series A through E) and 10+ years in SVP/VP marketing roles at enterprise platform companies. Career spans Oracle, Sun Microsystems ($1B Java platform), Software AG ($300M+ portfolio), Hortonworks, InfluxData, Teleport, Pachyderm (acquired by HPE), Twingate, and HiveMQ.
+Senior B2B marketing executive with 7+ years as CMO at venture-backed startups (Series A through E) and 10+ years in SVP/VP marketing roles at enterprise platform companies. Career spans Oracle, Sun Microsystems ($1B Java platform), Software AG ($300M+ portfolio), Hortonworks, InfluxData, Teleport, Pachyderm (acquired by HPE), Twingate, and HiveMQ.
 
-Track record of building and scaling GTM engines across PLG and enterprise-led motions for complex, developer-focused, data, and infrastructure platforms. Proven ability to translate deep technical adoption into forecastable pipeline and revenue — from $1M to $30M ARR at InfluxData, $10M to $30M at HiveMQ, and $20M to $120M at Forte Software. Built marketing teams from scratch (3 to 30+), scaled SDR organizations, and operated as a hands-on leader who drives execution alongside strategy.
+Track record of building and scaling GTM engines across PLG and enterprise-led motions for complex, developer-focused, data, and infrastructure platforms. Proven ability to translate deep technical adoption into forecastable pipeline and revenue — from $1M to $30M ARR at InfluxData, $10M to $30M at HiveMQ, and $20M to $120M at Forte Software. Built marketing teams from scratch (3 to 30-person orgs), scaled SDR organizations, and operated as a hands-on leader who drives execution alongside strategy.
 
 Education: Bachelor of Science, Mathematics — University of the Witwatersrand, South Africa.
 
@@ -48,7 +48,7 @@ Education: Bachelor of Science, Mathematics — University of the Witwatersrand,
 - **Role:** CMO at a growing startup, Series B+ preferred. Open to later-stage companies that need a seasoned GTM operator to scale.
 - **Product:** Strong technical, data, or AI-driven product. Developer-focused or infrastructure-oriented businesses where technical fluency matters.
 - **What matters most:** Being part of a vibrant, growing organization where the work makes a visible difference. Building a highly functional marketing organization that earns recognition — internally and in the market.
-- **Team size:** Not a primary motivator. Has built from 3 to 30+ and is comfortable at any stage. Cares more about building capability than headcount.
+- **Team size:** Not a primary motivator. Has built from 3 to 30-person orgs and is comfortable at any stage. Cares more about building capability than headcount.
 - **Budget:** Needs enough to execute, but not motivated by big budgets for their own sake. Motivated by building something that works.
 - **Location:** Remote-first preferred. Open to commuting into San Francisco. Not interested in heavy commute obligations beyond that.
 - **Style:** Hands-on operator with a strong analytical and execution mindset. Not looking for a "figurehead CMO" role — wants to build and drive.

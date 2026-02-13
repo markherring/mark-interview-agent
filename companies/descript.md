@@ -1,5 +1,11 @@
 # Descript - Company Context
 
+## ⚠️ EXAMPLE RULES FOR DESCRIPT
+- **DO NOT quote HiveMQ PLG numbers** ($2.6M→$8.4M) — Descript is at $70M ARR, those numbers sound small
+- **USE InfluxData** ($1M→$30M ARR) as the primary "built from scratch" reference
+- **USE pipeline scaling examples** (InfluxData $5.5M→$9M/quarter, Teleport $3.1M→$8.4M/quarter) for sales-led motion
+- **HiveMQ is OK for:** ABM strategy, vertical focus, pipeline doubling ($25M→$53M) — just not the PLG dollar figures
+
 ## Company Overview
 
 | Field | Detail |
