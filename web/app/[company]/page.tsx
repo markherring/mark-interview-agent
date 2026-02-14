@@ -142,15 +142,6 @@ export default function InterviewPage({ params }: { params: { company: string } 
         flushUpdate()
       }
 
-      // Track usage (fire-and-forget, don't let errors affect the chat)
-      fetch('/api/track', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          company: companyName,
-          question
-        })
-      }).catch(() => {})
     } catch (error: any) {
       if (error.name === 'AbortError') {
         console.log('Request aborted by user')

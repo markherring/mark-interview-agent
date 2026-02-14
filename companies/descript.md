@@ -13,8 +13,8 @@
 | **Website** | https://descript.com |
 | **Founded** | 2017 (by Andrew Mason, also founded Groupon) |
 | **HQ** | San Francisco, CA |
-| **Employees** | ~100–150 |
-| **Revenue** | ~$70M ARR (per Laura), ~75% YoY growth |
+| **Employees** | ~189 (per Will, Feb 2025) |
+| **Revenue** | ~$70M total ARR — $63M self-serve + ~$5M enterprise (per Will). ~75% YoY growth. |
 | **Valuation** | ~$550M (Series C, Nov 2022) |
 | **Total Funding** | ~$100M across 4 rounds |
 | **Series C** | $50M (Nov 2022, led by OpenAI Startup Fund) |
@@ -25,11 +25,23 @@
 
 **What they do:** AI-powered video and audio editing platform. Core innovation: edit video by editing text (transcript-based). Combines recording, editing, collaboration, and publishing in one tool. AI agent "Underlord" launched Jul 2025 for natural-language editing commands.
 
-**Two motions (per Laura):**
-- **PLG:** $16–50/month plans. SMBs, podcasters, solopreneurs, creators. ~80% consumer churn.
-- **Sales-led:** 200+ enterprise customers. Small ACVs. 130% NRR. Sales team scaled 1→5 AEs. Sales revenue tripled QoQ. Goal: sales to reach ~35% of ARR.
+**Two motions:**
+- **PLG/Self-serve:** $16–50/month plans. SMBs, podcasters, solopreneurs, creators. ~80% consumer churn. Growing ~$7M/quarter. 90% are single-seat creators. Heavy in podcasting (Mel Robbins etc.), churches, sporadic use cases. Whitney Steele (VP Marketing) oversees this side.
+- **Sales-led/Enterprise:** ~$5M ARR, target $15M in 2026 (per Will). NDR 122–127% (per Will). Avg deal size ~$20K. Will's team: 11 people (sales, CS, sales engineering) including 5 AEs. Revenue trajectory: $300K → $800K → $1M/quarter. No SDRs, no outbound, no demand gen. Pipeline is entirely hand-raisers + PQAs (converting self-serve to enterprise). Laura's longer-term goal: sales-led to reach ~35% of ARR.
 
-**Key customers:** Salesforce, New York Times, BBC, Amazon, Netflix, Figma, Apple, Microsoft, Canva
+**Key customers:** Salesforce, New York Times, BBC, The Independent, Amazon, Netflix, Figma, Apple, Microsoft, Canva, Mayo Clinic, UHG, Coursera, Udemy, Pluralsight
+
+**Enterprise ICP by vertical (per Will, formalized at SKO ~Jan 2026):**
+- **Media** (BBC, The Independent) — workflow speed, rough cuts at pace of news, time savings (e.g. 10 hrs → 4 hrs per video)
+- **Tech** (brand studios, marketing teams) — product demos, enablement materials, social clips without creative team bottleneck
+- **Education/EdTech** (Coursera, Udemy, Pluralsight) — course creation/repurposing from non-creators. TAM is limited (~6 companies + institutions)
+- **Regulated industries — healthcare & financial services** (Mayo Clinic, UHG) — on-brand, compliant L&D and internal comms, cost savings at scale. UHG "Meet My Physician" campaign: templated 9,000 physician videos, saved from $3K/video. Biggest untapped opportunity per Will.
+
+**Why enterprises buy (two value drivers per Will):**
+1. **Workflow efficiency & time savings** — Raw recording → polished asset is still painful (Adobe expertise, creative team bottleneck). Descript dramatically compresses that. Critical for newsrooms.
+2. **Scale content output** — Enable non-creators to produce video without creative team. Marketing can self-serve product demos, enablement, social clips. At scale: templated/API-driven bulk production (UHG example).
+
+*Note: Enterprise value prop around marketing pipeline impact is still soft — can tell efficiency story but can't yet prove downstream pipeline impact.*
 
 **Target B2B use cases:** Marketing, sales enablement, learning & development, customer success, user research/UX, higher education
 
