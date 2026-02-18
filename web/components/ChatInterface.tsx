@@ -19,6 +19,7 @@ interface ChatInterfaceProps {
 export function ChatInterface({ messages, onAskQuestion, onStopGenerating, isLoading, disabled, streamingIndex }: ChatInterfaceProps) {
   const [input, setInput] = useState('')
   const messagesEndRef = useRef<HTMLDivElement>(null)
+  const messagesContainerRef = useRef<HTMLDivElement>(null)
   const lastScrollRef = useRef(0)
 
   const scrollToBottom = () => {
@@ -26,7 +27,12 @@ export function ChatInterface({ messages, onAskQuestion, onStopGenerating, isLoa
     const now = Date.now()
     if (now - lastScrollRef.current < 300) return
     lastScrollRef.current = now
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
+    // Use scrollTop on the container instead of scrollIntoView to prevent
+    // mobile Safari from scrolling the entire page down to suggested questions
+    const container = messagesContainerRef.current
+    if (container) {
+      container.scrollTop = container.scrollHeight
+    }
   }
 
   useEffect(() => {
@@ -44,7 +50,7 @@ export function ChatInterface({ messages, onAskQuestion, onStopGenerating, isLoa
   return (
     <div className="flex flex-col h-[480px]">
       {/* Messages Area */}
-      <div className="flex-1 overflow-y-auto mb-3 space-y-3">
+      <div ref={messagesContainerRef} className="flex-1 overflow-y-auto mb-3 space-y-3">
         {messages.length === 0 ? (
           <div className="text-center py-8 text-gray-500">
             <p className="text-base font-medium mb-2">Welcome to Mark's Interactive Interview</p>
