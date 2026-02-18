@@ -10,7 +10,7 @@
 ## Technical Strengths
 - **Deep domain expertise:** Databases and data infrastructure, IoT/data streaming (MQTT, industrial protocols), big data (Hadoop ecosystem), MLOps, open-source infrastructure, developer platforms, enterprise integration and middleware. Career-long pattern of marketing very technical products to very technical audiences.
 - **GTM fluency across technical markets:** AI/ML platforms, MLOps, DevOps/SRE tooling, Zero Trust and infrastructure security, big data, databases, enterprise middleware and messaging
-- **AI-era marketing operator:** Hands-on with the modern AI marketing stack — Clay for data enrichment and prospecting, N8N for workflow automation, Claude and ChatGPT for content and analysis, Tofu AI for content personalization, plus broader agentic tooling for lifecycle orchestration, targeting, and GTM execution. Actively replacing legacy workflows with AI-powered automation across the full marketing stack — not just experimenting, but operating.
+- **AI-era marketing operator:** Operationally fluent across 15+ AI tools spanning the full marketing stack — enrichment, automation, content, video, conversational intelligence, account intelligence, and application building. Not experimenting — operating. Has built production AI workflows and shipped functional AI projects end-to-end. *(Full details: `core/reference/ai-skills.md`)*
 - **Platform and ecosystem thinking:** Deep experience building developer ecosystems at scale (Java: 12M monthly users, 1M developers in year one; InfluxDB: category-defining OSS adoption; Hortonworks: 10K+ event attendance)
 - **Data and analytics rigor:** BI integration, attribution modeling, pipeline forecasting, funnel instrumentation — treats marketing as a measurable revenue system
 
