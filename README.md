@@ -13,7 +13,7 @@ An AI agent that represents Mark Herring in interview contexts. Interviewers can
 ## Architecture (Simplified)
 
 ```
-mark-agent/
+mark-interview-agent/
 ├── core/                          # Mark's identity (reusable across companies)
 │   ├── identity.md                # Background, skills, values, style
 │   ├── standard_answers/          # STAR-formatted responses to common questions

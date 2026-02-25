@@ -14,6 +14,7 @@
 | **Latest Round** | Private equity round (Jan 2026, led by AllianceBernstein) |
 | **Series D** | $150M (Jan 2024, led by FTV Capital + NVIDIA) |
 | **Key Investors** | FTV Capital, NVIDIA, AllianceBernstein, Vistara Growth, Sweetwater PE, NextEquity, Nicola, Beedie Capital, Hercules Capital |
+| **Bay Area Office** | San Mateo, CA (Crossroads Building) |
 | **Category** | Enterprise Agentic / Conversational AI Platform |
 | **Verticals** | Financial services, healthcare, retail |
 | **Horizontals** | IT, HR, recruiting workflows |
@@ -80,6 +81,7 @@ Low-code platform for AI agent development with two paradigms:
 | **Uma Sandilya** | Chief Growth Officer | Former C3.AI (~10 yrs, took public). McKinsey background. Key stakeholder / gatekeeper. |
 | **Lynda Smith** | Sr Marketing Advisor | Former multi-time CMO. Hands-on gap-filler. Wants a true CMO to take over. |
 | **Bill Macaitis** | Advisor | Former CMO at Slack and Zendesk. Ongoing advisor. Wants to partner with new CMO. | 
+| **Christy Damon** | Interim CMO | UK-based. Works closely with Lynda and Bill. |
 | **Trang Watson** | Chief of Staff | we worked together at HiveMQ where she was Chief of Staff. She referred me to the company |
 
 ---
@@ -92,6 +94,9 @@ Low-code platform for AI agent development with two paradigms:
 - 2026-01-21 — Intro: Mark Herring ↔ Uma Sandilya
 - 2026-01-26 — Bill Macaitis & Mark
 - 2026-01-29 — Lynda Smith & Mark
+
+### Office
+Mark is Bay Area-based and comfortable committing to 2x/week in the San Mateo office. Open to discussing cadence as the role evolves.
 
 ### Top Problems to Solve
 1. **Brand & Awareness** — Zero Bay Area visibility. Orlando HQ + east coast investors = no tech ecosystem presence. Need analyst-led credibility, not hype.

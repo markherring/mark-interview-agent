@@ -19,7 +19,7 @@ I've created a **complete, production-ready web application** for your AI-powere
 ## File Structure
 
 ```
-mark-agent/
+mark-interview-agent/
 ├── web/                           ← NEW WEB APPLICATION
 │   ├── app/
 │   │   ├── [company]/page.tsx    ← Dynamic company pages

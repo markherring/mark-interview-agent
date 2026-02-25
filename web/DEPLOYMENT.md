@@ -16,7 +16,7 @@ This guide will walk you through deploying your Mark Herring Interview Agent to 
 2. Initialize git in your project:
 
 ```bash
-cd /path/to/mark-agent
+cd /path/to/mark-interview-agent
 git init
 git add .
 git commit -m "Initial commit"

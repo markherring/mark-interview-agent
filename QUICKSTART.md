@@ -9,7 +9,7 @@
 ## 2. Set Up Environment (1 minute)
 
 ```bash
-cd mark-agent
+cd mark-interview-agent
 
 # Create .env file
 cp .env.example .env
